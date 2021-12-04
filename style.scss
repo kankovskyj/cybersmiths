@@ -1,5 +1,159 @@
+$color-background: #faf5fd;
+$color-main: #8312C7;
+$color-text: #000000;
+$color-white: #FFFFFF;
+
+@mixin heading-large {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 5rem;
+}
+@mixin heading-small {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+@mixin text-large {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.3rem;
+}
+@mixin text-small {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+@mixin button-small {
+    @include text-large;
+    color: $color-main;
+    background-color: $color-white;
+    width: 10rem;
+    height: 3.5rem;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    a {
+        text-decoration: none;
+        color: $color-main;
+    }
+}
+
+@mixin button-large {
+    @include text-large;
+    background-color: $color-main;
+    width: 16rem;
+    height: 4.5rem;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    a {
+        text-decoration: none;
+        color: $color-white;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
-    background: black;
+}
+
+body {
+    background: url(imgs/lines.svg) $color-background;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80%;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button.button-small{
+    @include button-small();
+}
+
+button.button-large {
+    @include button-large;
+}
+
+.logo {
+    @include heading-small;
+    text-decoration: none;
+    font-size: 1.5rem
+}
+
+.heading-small {
+    @include heading-small;
+}
+
+.heading-large {
+    @include heading-large;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    margin-top: 5vh;
+    
+    & > div {
+        width: 50%;
+        span {
+            color: $color-main;
+            position: relative;
+            z-index: 1;
+        }
+        span::after {
+            content: "";
+            position: absolute;
+            width: 15rem;
+            height: 15rem;
+            left: -10px;
+            top: -45px;
+            z-index: -1;
+            border-radius: 50%;
+        }
+        .abstract {
+            width: 525.83px;
+            height: 464.75px;
+            background-image: url(imgs/abstract.svg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+    button {
+        margin-top: 10vh;
+    }
+}
+
+bottom {
+    @include text-large;
+    position: absolute;
+    bottom: 5vh;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-top: 10vh;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    div {
+        display: flex;
+        align-items: center;
+        i {
+            display: block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: green;
+            margin-right: 0.25rem;
+        }
+    }
 }
