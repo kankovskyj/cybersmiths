@@ -6,7 +6,6 @@ $color-white: #FFFFFF;
 @mixin heading-large {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 5rem;
 }
 @mixin heading-small {
     font-family: 'Playfair Display', serif;
@@ -22,7 +21,6 @@ $color-white: #FFFFFF;
     font-weight: 400;
     font-size: 0.8rem;
 }
-
 @mixin button-small {
     @include text-large;
     color: $color-main;
@@ -37,7 +35,6 @@ $color-white: #FFFFFF;
         color: $color-main;
     }
 }
-
 @mixin button-large {
     @include text-large;
     background-color: $color-main;
@@ -51,6 +48,13 @@ $color-white: #FFFFFF;
         color: $color-white;
     }
 }
+@mixin content-backdrop {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+}
 
 * {
     margin: 0;
@@ -63,6 +67,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     width: 80%;
+    overflow-x: hidden;
     height: 100vh;
     margin-left: auto;
     margin-right: auto;
@@ -79,7 +84,8 @@ button.button-large {
 .logo {
     @include heading-small;
     text-decoration: none;
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    color: $color-text;
 }
 
 .heading-small {
@@ -88,6 +94,7 @@ button.button-large {
 
 .heading-large {
     @include heading-large;
+    font-size: 5rem;
 }
 
 nav {
@@ -95,7 +102,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 5vh;
+    padding-top: 5vh;
 }
 
 main {
@@ -111,22 +118,27 @@ main {
             z-index: 1;
         }
         span::after {
-            content: "";
-            position: absolute;
-            width: 15rem;
-            height: 15rem;
-            left: -10px;
-            top: -45px;
-            z-index: -1;
-            border-radius: 50%;
+            @include content-backdrop;
+            width: 18rem;
+            height: 18rem;
+            left: -40px;
+            top: -70px;
         }
         .abstract {
-            width: 525.83px;
-            height: 464.75px;
+            width: 32.864rem;
+            height: 29.047rem;
             background-image: url(imgs/abstract.svg);
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
+            position: relative;
+        }
+        .abstract::after {
+            @include content-backdrop;
+            left: 10px;
+            top: 30px;
+            width: 29rem;
+            height: 29rem;
         }
     }
     button {
@@ -140,10 +152,10 @@ bottom {
     bottom: 5vh;
     text-transform: uppercase;
     font-size: 0.8rem;
-    margin-top: 10vh;
     display: flex;
-    width: 80%;
     justify-content: space-between;
+    width: 80%;
+    margin-top: 10vh;
     div {
         display: flex;
         align-items: center;
@@ -152,8 +164,87 @@ bottom {
             width: 5px;
             height: 5px;
             border-radius: 50%;
-            background: green;
+            background: #008000;
             margin-right: 0.25rem;
         }
     }
+}
+
+
+
+@media (max-width: 1199px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 850px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 770px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 650px) {
+    html {
+        font-size: 12px;
+        overflow-x: hidden;
+        width: 100%;
+    }
+    body {
+        border: 2px solid red;
+    }
+    main {
+        display: block;
+        margin-top: 15vh;
+        position: relative;
+        
+        & > div {
+            width: 100%;
+            &:nth-of-type(2) {
+                position: absolute;
+                left: 22px;
+            }
+            .abstract {
+                width: 32.864rem;
+                height: 29.047rem;
+                background-image: url(imgs/abstract.svg);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: absolute;
+            }
+            .abstract::after {
+                display: none;
+            }
+        }
+        button {
+            margin-top: 10vh;
+        }
+    }
+    // main {
+    //     margin-top: 15vh;
+        
+    //     & > div {
+    //         width: 100%;
+    //         .heading-large {
+    //         }
+    //         &:nth-of-type(2) {
+    //             display: none;
+    //         }
+    //     }
+    // }
+
+    bottom {
+        display: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    
 }
