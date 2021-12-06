@@ -218,3 +218,11 @@ main {
         display: none;
     }
 }
+
+@media (max-width: 475px) {
+    .abstract {
+        top: 5vh;
+        right: -14rem;
+        opacity: 0.1;
+    }
+}
