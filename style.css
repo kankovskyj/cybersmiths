@@ -60,11 +60,31 @@ button.button-large a {
 body {
   width: 100%;
   overflow-x: hidden;
-  height: 100vh;
   background: url(imgs/lines.svg) #faf5fd;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.landing {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.abstract {
+  position: absolute;
+  top: 15vh;
+  right: 10rem;
+  width: 35rem;
+  height: 33rem;
+  z-index: -1;
+  opacity: 0.75;
+  background-image: url(imgs/abstract.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 header {
@@ -105,21 +125,7 @@ main .description h1 span {
   color: #8312C7;
 }
 
-.abstract {
-  position: absolute;
-  top: 15vh;
-  right: 10rem;
-  width: 35rem;
-  height: 33rem;
-  z-index: -1;
-  opacity: 0.75;
-  background-image: url(imgs/abstract.svg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-section {
+.bottom {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 0.8rem;
@@ -133,11 +139,11 @@ section {
   display: flex;
 }
 
-section p {
+.bottom p {
   margin-right: auto;
 }
 
-section div {
+.bottom div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,7 +152,7 @@ section div {
           align-items: center;
 }
 
-section div i {
+.bottom div i {
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -170,6 +176,13 @@ section div i {
   html {
     font-size: 14px;
   }
+  .abstract {
+    top: -2vh;
+    right: -18rem;
+    width: 45rem;
+    height: 43rem;
+    opacity: 0.1;
+  }
   header, main {
     width: 90%;
   }
@@ -177,7 +190,7 @@ section div i {
     font-size: 4rem;
     line-height: 5rem;
   }
-  section {
+  .bottom {
     display: none;
   }
 }

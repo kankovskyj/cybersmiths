@@ -96,11 +96,30 @@ button.button-large {
 body {
     width: 100%;
     overflow-x: hidden;
-    height: 100vh;
     background: url(imgs/lines.svg) $color-background;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.landing {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;    
+}
+.abstract {
+    position: absolute;
+    top: 15vh;
+    right: 10rem;
+    width: 35rem;
+    height: 33rem; 
+    z-index: -1;
+    opacity: 0.75;
+    background-image: url(imgs/abstract.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 header {
@@ -129,21 +148,9 @@ main {
     }
 }
 
-.abstract {
-    position: absolute;
-    top: 15vh;
-    right: 10rem;
-    width: 35rem;
-    height: 33rem; 
-    z-index: -1;
-    opacity: 0.75;
-    background-image: url(imgs/abstract.svg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
-section {
+
+.bottom {
     @include text-small;
     text-transform: uppercase;
     position: absolute;
@@ -190,6 +197,14 @@ section {
     html {
         font-size: 14px;
     }
+    .abstract {
+        top: -2vh;
+        right: -18rem;
+        width: 45rem;
+        height: 43rem; 
+        opacity: 0.1;
+    }
+    
     header, main {
         width: 90%;
     }
@@ -199,24 +214,7 @@ section {
             line-height: 5rem;
         }
     }
-    .abstract {
-        // top: -38vh;
-        // right: -25rem;
-        // width: 60rem;
-        // height: 58rem; 
-        // opacity: 0.1;
-        // background-size: contain;
-        // background-position: center;
-        // top: 10vh;
-        // right: -11rem;
-        // width: 45rem;
-        // height: 43rem; 
-        // opacity: 0.1;
-        // background-size: contain;
-        // background-position: center;
-    }
-    
-    section {
+    .bottom {
         display: none;
     }
 }
