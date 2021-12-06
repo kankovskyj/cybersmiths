@@ -55,20 +55,8 @@ $color-white: #FFFFFF;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
 }
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background: url(imgs/lines.svg) $color-background;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+@mixin block {
     width: 80%;
-    overflow-x: hidden;
-    height: 100vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -97,154 +85,138 @@ button.button-large {
     font-size: 5rem;
 }
 
-nav {
+
+//styles
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    overflow-x: hidden;
+    height: 100vh;
+    background: url(imgs/lines.svg) $color-background;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header {
+    @include block;
     padding-top: 5vh;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 main {
-    display: flex;
-    align-items: center;
-    margin-top: 5vh;
-    
-    & > div {
-        width: 50%;
-        span {
-            color: $color-main;
-            position: relative;
-            z-index: 1;
+    @include block;
+    padding-top: 10vh;
+    .description {
+        h1 {
+            @include heading-large;
+            font-size: 5rem;
+            line-height: 6rem;
+            padding-bottom: 10vh;
+            span {
+                color: $color-main;
+            }
         }
-        span::after {
-            @include content-backdrop;
-            width: 18rem;
-            height: 18rem;
-            left: -40px;
-            top: -70px;
-        }
-        .abstract {
-            width: 32.864rem;
-            height: 29.047rem;
-            background-image: url(imgs/abstract.svg);
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-        .abstract::after {
-            @include content-backdrop;
-            left: 10px;
-            top: 30px;
-            width: 29rem;
-            height: 29rem;
-        }
-    }
-    button {
-        margin-top: 10vh;
     }
 }
 
-bottom {
-    @include text-large;
+.abstract {
+    position: absolute;
+    top: 15vh;
+    right: 10rem;
+    width: 35rem;
+    height: 33rem; 
+    z-index: -1;
+    opacity: 0.75;
+    background-image: url(imgs/abstract.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+section {
+    @include text-small;
+    text-transform: uppercase;
     position: absolute;
     bottom: 5vh;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    display: flex;
-    justify-content: space-between;
     width: 80%;
-    margin-top: 10vh;
+    margin-left: 10%;
+    display: flex;
+    p {
+        margin-right: auto;
+    }
     div {
         display: flex;
         align-items: center;
         i {
-            display: block;
             width: 5px;
             height: 5px;
             border-radius: 50%;
             background: #008000;
-            margin-right: 0.25rem;
+            margin-right: 5px;
         }
     }
+    
 }
+
 
 
 
 @media (max-width: 1199px) {
-    html {
-        font-size: 13px;
+    .abstract {
+        opacity: 0.1;
     }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 750px) {
     html {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 770px) {
-    html {
-        font-size: 10px;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 650px) {
-    html {
-        font-size: 12px;
-        overflow-x: hidden;
-        width: 100%;
-    }
-    body {
-        border: 2px solid red;
-    }
-    main {
-        display: block;
-        margin-top: 15vh;
-        position: relative;
-        
-        & > div {
-            width: 100%;
-            &:nth-of-type(2) {
-                position: absolute;
-                left: 22px;
-            }
-            .abstract {
-                width: 32.864rem;
-                height: 29.047rem;
-                background-image: url(imgs/abstract.svg);
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                position: absolute;
-            }
-            .abstract::after {
-                display: none;
-            }
-        }
-        button {
-            margin-top: 10vh;
-        }
-    }
-    // main {
-    //     margin-top: 15vh;
-        
-    //     & > div {
-    //         width: 100%;
-    //         .heading-large {
-    //         }
-    //         &:nth-of-type(2) {
-    //             display: none;
-    //         }
-    //     }
-    // }
-
-    bottom {
-        display: none;
-    }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 575px) {
+    html {
+        font-size: 14px;
+    }
+    header, main {
+        width: 90%;
+    }
+    main > .description {
+        h1 {
+            font-size: 4rem;
+            line-height: 5rem;
+        }
+    }
+    .abstract {
+        // top: -38vh;
+        // right: -25rem;
+        // width: 60rem;
+        // height: 58rem; 
+        // opacity: 0.1;
+        // background-size: contain;
+        // background-position: center;
+        // top: 10vh;
+        // right: -11rem;
+        // width: 45rem;
+        // height: 43rem; 
+        // opacity: 0.1;
+        // background-size: contain;
+        // background-position: center;
+    }
     
+    section {
+        display: none;
+    }
 }
