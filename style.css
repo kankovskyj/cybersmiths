@@ -174,7 +174,7 @@ main .description h1 span {
 .info-wrapper {
   position: relative;
   margin-top: 15vh;
-  height: 80vh;
+  height: 100vh;
   padding-top: 10vh;
   overflow-x: hidden;
 }
@@ -183,7 +183,6 @@ main .description h1 span {
   z-index: 2;
   position: absolute;
   top: 15vh;
-  left: 5px;
   margin-left: 10%;
 }
 
@@ -200,6 +199,7 @@ main .description h1 span {
 
 .info-wrapper .info-right {
   position: absolute;
+  pointer-events: none;
   right: -100px;
   -webkit-perspective: 1000px;
           perspective: 1000px;
@@ -218,15 +218,91 @@ main .description h1 span {
   left: 225px;
 }
 
+.info-wrapper__second {
+  margin-top: 0;
+}
+
+.info-wrapper__second .info-left {
+  top: 15vh;
+  right: 0;
+  width: 50%;
+}
+
+.info-wrapper__second .info-left p {
+  margin-top: 5vh;
+  width: 90%;
+}
+
+.info-wrapper__second .info-right {
+  left: -100px;
+}
+
+.info-wrapper__second .info-right img {
+  -webkit-transform: rotateY(20deg);
+          transform: rotateY(20deg);
+}
+
+.info-wrapper__second .info-right img:nth-of-type(2) {
+  top: 200px;
+  left: 225px;
+}
+
 @media (max-width: 1199px) {
   .abstract {
     opacity: 0.1;
+  }
+  .landing {
+    overflow-y: hidden;
   }
 }
 
 @media (max-width: 750px) {
   html {
     font-size: 14px;
+  }
+  .info-wrapper {
+    margin-bottom: -20vh;
+  }
+  .info-wrapper > .info-right img {
+    width: 490px;
+    height: 250px;
+  }
+  .info-wrapper__second > .info-right img {
+    width: 250px;
+    height: 250px;
+  }
+  .info-wrapper__second > .info-right img:nth-of-type(2) {
+    position: absolute;
+    top: 150px;
+    left: 190px;
+  }
+}
+
+@media (max-width: 650px) {
+  .landing {
+    margin-bottom: -20vh;
+  }
+  .info-wrapper {
+    margin-top: 40vh;
+  }
+  .info-wrapper .info-left p {
+    width: 80%;
+  }
+  .info-wrapper__second {
+    margin-top: 0;
+    height: 170vh;
+  }
+  .info-wrapper__second .info-left {
+    top: 55vh;
+    left: 0;
+    width: 90%;
+  }
+  .info-wrapper__second .info-left p {
+    width: 90%;
+  }
+  .info-wrapper__second .info-right img {
+    width: 400px;
+    height: 400px;
   }
 }
 
@@ -251,6 +327,16 @@ main .description h1 span {
   }
   .bottom {
     display: none;
+  }
+  .info-wrapper .info-left {
+    margin-left: 5%;
+  }
+  .info-wrapper .info-left h2 {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+  .info-wrapper .info-left p {
+    width: 90%;
   }
 }
 

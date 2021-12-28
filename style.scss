@@ -187,14 +187,13 @@ main {
 .info-wrapper {
     position: relative;
     margin-top: 15vh;
-    height: 80vh;
+    height: 100vh;
     padding-top: 10vh;
     overflow-x: hidden;
     .info-left {
         z-index: 2;
         position: absolute;
         top: 15vh;
-        left: 5px;
         margin-left: 10%;
         h2 {
             display: inline;
@@ -208,6 +207,7 @@ main {
     }
     .info-right {
         position: absolute;
+        pointer-events: none;
         right: -100px;
         perspective: 1000px;
         perspective-origin: 50% 50%;
@@ -221,10 +221,36 @@ main {
         }
     }
 }
+.info-wrapper__second {
+    margin-top: 0;
+    .info-left {
+        top: 15vh;
+        right: 0;
+        width: 50%;
+
+        p {
+            margin-top: 5vh;
+            width: 90%;
+        }
+    }
+    .info-right {
+        left: -100px;
+        img {
+            transform: rotateY(20deg);
+            &:nth-of-type(2) {
+                top: 200px;
+                left: 225px;
+            }
+        }
+    }
+}
 
 @media (max-width: 1199px) {
     .abstract {
         opacity: 0.1;
+    }
+    .landing { //fix in a better way
+        overflow-y: hidden;
     }
 }
 
@@ -232,9 +258,63 @@ main {
     html {
         font-size: 14px;
     }
+    .info-wrapper {
+        margin-bottom: -20vh;
+        & > .info-right {
+            img {
+                width: 490px;
+                height: 250px;
+            }
+        }
+    }
+    
+    .info-wrapper__second > .info-right {
+        img {
+            width: 250px;
+            height: 250px;
+            &:nth-of-type(2) {
+                position: absolute;
+                top: 150px;
+                left: 190px;
+            }
+        }
+    }
 }
 
 @media (max-width: 650px) {
+    .landing {
+        margin-bottom: -20vh;
+    }
+    .info-wrapper {
+        margin-top: 40vh;
+        .info-left {
+            p {
+                width: 80%;
+            }
+        }
+    }
+    .info-wrapper__second {
+        margin-top: 0;
+        height: 170vh;
+        .info-left {
+            top: 55vh;
+            left: 0;
+            width: 90%;
+    
+            p {
+                width: 90%;
+            }
+        }
+        .info-right {
+            img {
+                width: 400px;
+                height: 400px;
+                &:nth-of-type(2) {
+                    
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 575px) {
@@ -262,6 +342,16 @@ main {
     .bottom {
         display: none;
     }
+    .info-wrapper .info-left {
+        margin-left: 5%;
+        h2 {
+            font-size: 4rem;
+            line-height: 5rem;
+        }
+        p {
+            width: 90%;
+        }
+    }
 }
 
 @media (max-width: 475px) {
@@ -280,3 +370,6 @@ main {
         font-size: 3.8rem;
     }
 }
+
+
+//vertikalni scroll na mainu - abstracgt !!!!!!
