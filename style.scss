@@ -23,30 +23,30 @@ $color-white: #FFFFFF;
 }
 @mixin button-small {
     @include text-large;
+    display: block;
     color: $color-main;
     background-color: $color-white;
     width: 10rem;
     height: 3.5rem;
+    line-height: 3.5rem;
     text-align: center;
     border: none;
     text-transform: uppercase;
-    a {
-        text-decoration: none;
-        color: $color-main;
-    }
+    text-decoration: none;
+    color: $color-main;
 }
 @mixin button-large {
     @include text-large;
+    display: block;
     background-color: $color-main;
     width: 16rem;
     height: 4.5rem;
+    line-height: 4.5rem;
     text-align: center;
     border: none;
     text-transform: uppercase;
-    a {
-        text-decoration: none;
-        color: $color-white;
-    }
+    text-decoration: none;
+    color: $color-white;  
 }
 @mixin content-backdrop {
     content: "";
@@ -60,12 +60,14 @@ $color-white: #FFFFFF;
     margin-left: auto;
     margin-right: auto;
 }
-
-button.button-small{
+button {
+    border: none;
+}
+a.button-small{
     @include button-small();
 }
 
-button.button-large {
+.button-large {
     @include button-large;
 }
 
@@ -83,6 +85,10 @@ button.button-large {
 .heading-large {
     @include heading-large;
     font-size: 5rem;
+}
+.text-large {
+    @include text-large;
+    font-weight: 400;
 }
 
 
@@ -175,6 +181,72 @@ main {
     
 }
 
+.info-wrapper {
+    margin-top: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:nth-of-type(2) {
+        .info-left { //right
+            z-index: 555;
+            order: 2;
+            margin-left: -10%;
+            width: 40%;
+        }
+        .info-right { //left
+            margin-left: -50px;
+            width: 60%;
+            img {
+                transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(12deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
+                &:nth-of-type(2) {
+                    position: absolute;
+                    top: 250px;
+                    left: 25px;
+                }
+                &:nth-of-type(3) {
+                    position: absolute;
+                    top: 155px;
+                    left: 225px;
+                }
+            }
+        }
+    }
+
+    .info-left {
+        margin-left: 10%;
+        width: 60%;
+        h2 {
+            white-space: nowrap;
+            display: inline;
+            background: $color-white;
+        }
+        p {
+            margin-top: 1.5rem;
+            width: 100%;
+            background: $color-white;
+            line-height: 2.5rem;
+        }
+    }
+    .info-right {
+        width: 40%;
+        margin-left: 280px;
+        position: relative;
+        perspective: 1000px;
+        perspective-origin: 50% 50%;
+        img {
+            transform: rotateY(-20deg);
+            transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(-12deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
+            &:nth-of-type(2) {
+                position: absolute;
+                top: 125px;
+                left: 225px;
+            }
+        }
+    }
+}
+
 
 
 
@@ -226,3 +298,12 @@ main {
         opacity: 0.1;
     }
 }
+
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+        br {
+            display: none;
+        }
+        main > .description > h1 {
+            font-size: 3.8rem;
+        }
+    }

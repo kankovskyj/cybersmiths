@@ -1,34 +1,36 @@
-button.button-small {
+button {
+  border: none;
+}
+
+a.button-small {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 1.3rem;
+  display: block;
   color: #8312C7;
   background-color: #FFFFFF;
   width: 10rem;
   height: 3.5rem;
+  line-height: 3.5rem;
   text-align: center;
   border: none;
   text-transform: uppercase;
-}
-
-button.button-small a {
   text-decoration: none;
   color: #8312C7;
 }
 
-button.button-large {
+.button-large {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 1.3rem;
+  display: block;
   background-color: #8312C7;
   width: 16rem;
   height: 4.5rem;
+  line-height: 4.5rem;
   text-align: center;
   border: none;
   text-transform: uppercase;
-}
-
-button.button-large a {
   text-decoration: none;
   color: #FFFFFF;
 }
@@ -50,6 +52,13 @@ button.button-large a {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
   font-size: 5rem;
+}
+
+.text-large {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  font-weight: 400;
 }
 
 * {
@@ -160,6 +169,93 @@ main .description h1 span {
   margin-right: 5px;
 }
 
+.info-wrapper {
+  margin-top: 40vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info-wrapper:nth-of-type(2) .info-left {
+  z-index: 555;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  margin-left: -10%;
+  width: 40%;
+}
+
+.info-wrapper:nth-of-type(2) .info-right {
+  margin-left: -50px;
+  width: 60%;
+}
+
+.info-wrapper:nth-of-type(2) .info-right img {
+  -webkit-transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(12deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
+          transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(12deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
+}
+
+.info-wrapper:nth-of-type(2) .info-right img:nth-of-type(2) {
+  position: absolute;
+  top: 250px;
+  left: 25px;
+}
+
+.info-wrapper:nth-of-type(2) .info-right img:nth-of-type(3) {
+  position: absolute;
+  top: 155px;
+  left: 225px;
+}
+
+.info-wrapper .info-left {
+  margin-left: 10%;
+  width: 60%;
+}
+
+.info-wrapper .info-left h2 {
+  white-space: nowrap;
+  display: inline;
+  background: #FFFFFF;
+}
+
+.info-wrapper .info-left p {
+  margin-top: 1.5rem;
+  width: 100%;
+  background: #FFFFFF;
+  line-height: 2.5rem;
+}
+
+.info-wrapper .info-right {
+  width: 40%;
+  margin-left: 280px;
+  position: relative;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+}
+
+.info-wrapper .info-right img {
+  -webkit-transform: rotateY(-20deg);
+          transform: rotateY(-20deg);
+  -webkit-transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(-12deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
+          transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(-12deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
+}
+
+.info-wrapper .info-right img:nth-of-type(2) {
+  position: absolute;
+  top: 125px;
+  left: 225px;
+}
+
 @media (max-width: 1199px) {
   .abstract {
     opacity: 0.1;
@@ -200,6 +296,15 @@ main .description h1 span {
     top: 5vh;
     right: -14rem;
     opacity: 0.1;
+  }
+}
+
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+  br {
+    display: none;
+  }
+  main > .description > h1 {
+    font-size: 3.8rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
