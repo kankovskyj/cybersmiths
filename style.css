@@ -3,12 +3,12 @@ button {
 }
 
 a.button-small {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1.3rem;
   display: block;
-  color: #8312C7;
-  background-color: #FFFFFF;
+  color: #8312c7;
+  background-color: #ffffff;
   width: 10rem;
   height: 3.5rem;
   line-height: 3.5rem;
@@ -16,15 +16,15 @@ a.button-small {
   border: none;
   text-transform: uppercase;
   text-decoration: none;
-  color: #8312C7;
+  color: #8312c7;
 }
 
 .button-large {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1.3rem;
   display: block;
-  background-color: #8312C7;
+  background-color: #8312c7;
   width: 16rem;
   height: 4.5rem;
   line-height: 4.5rem;
@@ -32,11 +32,11 @@ a.button-small {
   border: none;
   text-transform: uppercase;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .logo {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 400;
   text-decoration: none;
   font-size: 1.5rem;
@@ -44,18 +44,18 @@ a.button-small {
 }
 
 .heading-small {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 400;
 }
 
 .heading-large {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 900;
   font-size: 5rem;
 }
 
 .text-large {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 1.3rem;
   font-weight: 400;
@@ -67,12 +67,14 @@ a.button-small {
 }
 
 body {
-  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   background: url(imgs/lines.svg) #faf5fd;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
 }
 
 .landing {
@@ -123,7 +125,7 @@ main {
 }
 
 main .description h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 900;
   font-size: 5rem;
   line-height: 6rem;
@@ -131,11 +133,11 @@ main .description h1 {
 }
 
 main .description h1 span {
-  color: #8312C7;
+  color: #8312c7;
 }
 
 .bottom {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -170,9 +172,11 @@ main .description h1 span {
 }
 
 .info-wrapper {
-  margin-top: 30vh;
-  width: 100%;
   position: relative;
+  margin-top: 15vh;
+  height: 80vh;
+  padding-top: 10vh;
+  overflow-x: hidden;
 }
 
 .info-wrapper .info-left {
@@ -185,13 +189,13 @@ main .description h1 span {
 
 .info-wrapper .info-left h2 {
   display: inline;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .info-wrapper .info-left p {
   margin-top: 5vh;
   width: 50%;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .info-wrapper .info-right {
@@ -237,7 +241,8 @@ main .description h1 span {
     height: 43rem;
     opacity: 0.1;
   }
-  header, main {
+  header,
+  main {
     width: 90%;
   }
   main > .description h1 {
