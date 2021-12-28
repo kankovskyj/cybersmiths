@@ -172,70 +172,21 @@ main .description h1 span {
 .info-wrapper {
   margin-top: 40vh;
   width: 100%;
+  overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.info-wrapper:nth-of-type(2) .info-left {
-  z-index: 555;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
-  margin-left: -10%;
-  width: 40%;
-}
-
-.info-wrapper:nth-of-type(2) .info-right {
-  margin-left: -50px;
-  width: 60%;
-}
-
-.info-wrapper:nth-of-type(2) .info-right img {
-  -webkit-transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(12deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
-          transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(12deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
-}
-
-.info-wrapper:nth-of-type(2) .info-right img:nth-of-type(2) {
-  position: absolute;
-  top: 250px;
-  left: 25px;
-}
-
-.info-wrapper:nth-of-type(2) .info-right img:nth-of-type(3) {
-  position: absolute;
-  top: 155px;
-  left: 225px;
-}
-
 .info-wrapper .info-left {
   margin-left: 10%;
-  width: 60%;
-}
-
-.info-wrapper .info-left h2 {
-  white-space: nowrap;
-  display: inline;
-  background: #FFFFFF;
-}
-
-.info-wrapper .info-left p {
-  margin-top: 1.5rem;
-  width: 100%;
-  background: #FFFFFF;
-  line-height: 2.5rem;
 }
 
 .info-wrapper .info-right {
-  width: 40%;
-  margin-left: 280px;
+  overflow-x: hidden;
   position: relative;
   -webkit-perspective: 1000px;
           perspective: 1000px;
@@ -246,14 +197,16 @@ main .description h1 span {
 .info-wrapper .info-right img {
   -webkit-transform: rotateY(-20deg);
           transform: rotateY(-20deg);
-  -webkit-transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(-12deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
-          transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(-12deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
 }
 
 .info-wrapper .info-right img:nth-of-type(2) {
   position: absolute;
   top: 125px;
   left: 225px;
+}
+
+.info-wrapper:nth-of-type(2) {
+  display: none;
 }
 
 @media (max-width: 1199px) {
