@@ -1,23 +1,23 @@
 $color-background: #faf5fd;
-$color-main: #8312C7;
+$color-main: #8312c7;
 $color-text: #000000;
-$color-white: #FFFFFF;
+$color-white: #ffffff;
 
 @mixin heading-large {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-weight: 900;
 }
 @mixin heading-small {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-weight: 400;
 }
 @mixin text-large {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 900;
     font-size: 1.3rem;
 }
 @mixin text-small {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 0.8rem;
 }
@@ -46,14 +46,19 @@ $color-white: #FFFFFF;
     border: none;
     text-transform: uppercase;
     text-decoration: none;
-    color: $color-white;  
+    color: $color-white;
 }
 @mixin content-backdrop {
     content: "";
     position: absolute;
     z-index: -1;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
 }
 @mixin block {
     width: 80%;
@@ -63,7 +68,7 @@ $color-white: #FFFFFF;
 button {
     border: none;
 }
-a.button-small{
+a.button-small {
     @include button-small();
 }
 
@@ -91,7 +96,6 @@ a.button-small{
     font-weight: 400;
 }
 
-
 //styles
 
 * {
@@ -100,26 +104,28 @@ a.button-small{
 }
 
 body {
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
     background: url(imgs/lines.svg) $color-background;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
 }
 
 .landing {
     position: relative;
     height: 100vh;
     width: 100%;
-    overflow-x: hidden;    
+    overflow-x: hidden;
 }
 .abstract {
     position: absolute;
     top: 15vh;
     right: 10rem;
     width: 35rem;
-    height: 33rem; 
+    height: 33rem;
     z-index: -1;
     opacity: 0.75;
     background-image: url(imgs/abstract.svg);
@@ -154,8 +160,6 @@ main {
     }
 }
 
-
-
 .bottom {
     @include text-small;
     text-transform: uppercase;
@@ -178,14 +182,14 @@ main {
             margin-right: 5px;
         }
     }
-    
 }
 
 .info-wrapper {
-    margin-top: 30vh;
-    width: 100%;
-    //overflow-x: hidden;
     position: relative;
+    margin-top: 15vh;
+    height: 80vh;
+    padding-top: 10vh;
+    overflow-x: hidden;
     .info-left {
         z-index: 2;
         position: absolute;
@@ -216,20 +220,12 @@ main {
             }
         }
     }
-    &:nth-of-type(2) {
-        // display: none;
-    }
 }
-
-
-
 
 @media (max-width: 1199px) {
     .abstract {
         opacity: 0.1;
     }
-
-    
 }
 
 @media (max-width: 750px) {
@@ -249,11 +245,12 @@ main {
         top: -2vh;
         right: -18rem;
         width: 45rem;
-        height: 43rem; 
+        height: 43rem;
         opacity: 0.1;
     }
-    
-    header, main {
+
+    header,
+    main {
         width: 90%;
     }
     main > .description {
@@ -276,10 +273,10 @@ main {
 }
 
 @media only screen and (max-height: 575.98px) and (orientation: landscape) {
-        br {
-            display: none;
-        }
-        main > .description > h1 {
-            font-size: 3.8rem;
-        }
+    br {
+        display: none;
     }
+    main > .description > h1 {
+        font-size: 3.8rem;
+    }
+}
