@@ -193,16 +193,16 @@ main .description h1 span {
 
 .info-wrapper {
   position: relative;
-  margin-top: 15vh;
+  margin-top: 5rem;
   height: 100vh;
-  padding-top: 10vh;
+  padding-top: 5rem;
   overflow-x: hidden;
 }
 
 .info-wrapper .info-left {
   z-index: 2;
   position: absolute;
-  top: 15vh;
+  top: 10rem;
   margin-left: 10%;
 }
 
@@ -212,7 +212,7 @@ main .description h1 span {
 }
 
 .info-wrapper .info-left p {
-  margin-top: 5vh;
+  margin-top: 2.5rem;
   width: 50%;
   background-color: #ffffff;
 }
@@ -239,17 +239,17 @@ main .description h1 span {
 }
 
 .info-wrapper__second {
-  margin-top: -20vh;
+  margin-top: -10rem;
 }
 
 .info-wrapper__second .info-left {
-  top: 15vh;
+  top: 10rem;
   right: 0;
   width: 50%;
 }
 
 .info-wrapper__second .info-left p {
-  margin-top: 5vh;
+  margin-top: 2.5rem;
   width: 90%;
 }
 
@@ -271,7 +271,7 @@ main .description h1 span {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20vh;
+  margin-top: 10rem;
   text-align: center;
   background-image: url(imgs/abstractTwo.svg);
   background-repeat: no-repeat;
@@ -286,7 +286,7 @@ main .description h1 span {
 
 .project p {
   display: inline-block;
-  margin-top: 5vh;
+  margin-top: 2.5rem;
   background-color: #ffffff;
 }
 
@@ -297,7 +297,7 @@ main .description h1 span {
   width: 55%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20vh;
+  margin-top: 10rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -319,7 +319,7 @@ main .description h1 span {
 }
 
 .footer {
-  margin-top: 30vh;
+  margin-top: 8rem;
   background: white;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.804359)), color-stop(75%, rgba(255, 255, 255, 0.966824)), to(white));
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.804359) 50%, rgba(255, 255, 255, 0.966824) 75%, white 100%);
@@ -335,7 +335,7 @@ main .description h1 span {
 }
 
 .footer .top {
-  padding-top: 25vh;
+  padding-top: 15rem;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -412,8 +412,8 @@ main .description h1 span {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 10vh;
-  padding-bottom: 5vh;
+  margin-top: 5rem;
+  padding-bottom: 3rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 0.8rem;
@@ -447,7 +447,7 @@ main .description h1 span {
     margin-bottom: 1rem;
   }
   .footer .bot {
-    margin-top: 0vh;
+    margin-top: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -461,7 +461,7 @@ main .description h1 span {
     font-size: 14px;
   }
   .info-wrapper {
-    margin-bottom: -20vh;
+    margin-bottom: -20rem;
   }
   .info-wrapper > .info-right img {
     width: 490px;
@@ -480,10 +480,10 @@ main .description h1 span {
 
 @media (max-width: 650px) {
   .landing {
-    margin-bottom: -20vh;
+    margin-bottom: -15rem;
   }
   .info-wrapper {
-    margin-top: 40vh;
+    margin-top: 20rem;
   }
   .info-wrapper .info-left p {
     width: 80%;
@@ -503,6 +503,9 @@ main .description h1 span {
   .info-wrapper__second .info-right img {
     width: 400px;
     height: 400px;
+  }
+  .project {
+    margin-top: -15rem;
   }
   .project h2 {
     font-size: 4rem;
@@ -526,7 +529,7 @@ main .description h1 span {
     padding-bottom: 0px;
   }
   .footer {
-    margin-top: 30vh;
+    margin-top: 5rem;
     padding-bottom: 10vh;
   }
   .footer .top .socials {
