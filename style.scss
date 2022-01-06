@@ -3,6 +3,18 @@ $color-main: #8312c7;
 $color-text: #000000;
 $color-white: #ffffff;
 
+::selection {
+    background-color: $color-main;
+    color: $color-white;
+}
+
+::-webkit-scrollbar {
+    background-color: $color-white;
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $color-main;
+}
 @mixin heading-large {
     font-family: "Playfair Display", serif;
     font-weight: 900;
@@ -33,7 +45,6 @@ $color-white: #ffffff;
     border: none;
     text-transform: uppercase;
     text-decoration: none;
-    color: $color-main;
 }
 @mixin button-large {
     @include text-large;
@@ -153,6 +164,8 @@ main {
             font-size: 5rem;
             line-height: 6rem;
             padding-bottom: 10vh;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
             span {
                 color: $color-main;
             }
@@ -222,7 +235,7 @@ main {
     }
 }
 .info-wrapper__second {
-    margin-top: 0;
+    margin-top: -20vh;
     .info-left {
         top: 15vh;
         right: 0;
@@ -245,6 +258,148 @@ main {
     }
 }
 
+.project {
+    @include block;
+    margin-top: 20vh;
+    text-align: center;
+    background-image: url(imgs/abstractTwo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    h2 {
+        display: inline-block;
+        background-color: $color-white;
+    }
+    p {
+        display: inline-block;
+        margin-top: 5vh;
+        background-color: $color-white;
+    }
+    div {
+        display: flex;
+        width: 55%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20vh;
+        justify-content: space-between;
+        button {
+            a {
+                img {
+                    vertical-align: sub;
+                    color: white;
+                    padding-bottom: 1.5px;
+                }
+            }
+            .button-large {
+                width: 18rem;
+            }
+            .button-large-two {
+                background-color: $color-white;
+                color: $color-main;
+            }
+        }
+        
+    }
+}
+
+.footer {
+    margin-top: 30vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.804359243697479) 50%, rgba(255,255,255,0.9668242296918768) 75%, rgba(255,255,255,1) 100%);
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    .top {
+        padding-top: 25vh;
+        @include block;
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+        align-items: center;
+
+        .footer-logo {
+            width: 192px;
+        }
+        p {
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+       
+        .socials {
+            display: flex;
+            a {
+                width: 40px;
+                height: 40px;
+                background-color: $color-text;
+                border-radius: 50%;
+                text-align: center;
+                background-position: center;
+                background-repeat: no-repeat; 
+                background-size: 60%;
+                background-image: url(imgs/dribble.svg);
+                margin-left: 0.5rem;
+                &:nth-of-type(1) {
+                    background-color: $color-white;
+                    background-image: url(imgs/dribble.svg);
+                    background-size: 100%;   
+                }         
+                &:nth-of-type(2) {
+                    background-image: url(imgs/linked.svg);
+                    background-size: 80%;   
+                }
+                &:nth-of-type(3) {
+                    background-image: url(imgs/facebook.svg);
+                    background-color: $color-white;
+                    background-size: 100%;   
+                }
+                &:nth-of-type(4) {
+                    background-image: url(imgs/instagram.svg);
+                    background-color: $color-white;
+                    background-size: 100%;   
+                }        
+            }
+            
+        }
+    }
+    .bot {
+        @include block;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10vh;
+        padding-bottom: 5vh;
+        @include text-small;
+        opacity: 0.5;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1199px) {
     .abstract {
         opacity: 0.1;
@@ -252,6 +407,36 @@ main {
     .landing { //fix in a better way
         overflow-y: hidden;
     }
+    .project {
+        div {
+            width: 100%;
+            button {
+                a {
+                    img {
+                        padding-bottom: 1px;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        .top {
+            flex-direction: column;
+            .logo {
+                width: initial;
+            }
+            & > * {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+        .bot {
+            margin-top: 0vh;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    
 }
 
 @media (max-width: 750px) {
@@ -315,6 +500,35 @@ main {
             }
         }
     }
+    .project {
+        h2 {
+            font-size: 4rem;
+            line-height: 5rem;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            button {
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 5vh;
+                a {
+                    img {
+                        padding-bottom: 0px;
+                    }
+                }
+            }
+            
+        }
+    }
+    .footer {
+        margin-top: 30vh;
+        padding-bottom: 10vh;
+        .top .socials {
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
 }
 
 @media (max-width: 575px) {
@@ -359,6 +573,12 @@ main {
         top: 5vh;
         right: -14rem;
         opacity: 0.1;
+    }
+    .info-wrapper {
+        .info-right {
+            right: -50px;
+            top: 50px;
+        }
     }
 }
 

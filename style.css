@@ -1,3 +1,22 @@
+::-moz-selection {
+  background-color: #8312c7;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #8312c7;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  background-color: #ffffff;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #8312c7;
+}
+
 button {
   border: none;
 }
@@ -16,7 +35,6 @@ a.button-small {
   border: none;
   text-transform: uppercase;
   text-decoration: none;
-  color: #8312c7;
 }
 
 .button-large {
@@ -130,6 +148,8 @@ main .description h1 {
   font-size: 5rem;
   line-height: 6rem;
   padding-bottom: 10vh;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 main .description h1 span {
@@ -219,7 +239,7 @@ main .description h1 span {
 }
 
 .info-wrapper__second {
-  margin-top: 0;
+  margin-top: -20vh;
 }
 
 .info-wrapper__second .info-left {
@@ -247,12 +267,192 @@ main .description h1 span {
   left: 225px;
 }
 
+.project {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+  text-align: center;
+  background-image: url(imgs/abstractTwo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.project h2 {
+  display: inline-block;
+  background-color: #ffffff;
+}
+
+.project p {
+  display: inline-block;
+  margin-top: 5vh;
+  background-color: #ffffff;
+}
+
+.project div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.project div button a img {
+  vertical-align: sub;
+  color: white;
+  padding-bottom: 1.5px;
+}
+
+.project div button .button-large {
+  width: 18rem;
+}
+
+.project div button .button-large-two {
+  background-color: #ffffff;
+  color: #8312c7;
+}
+
+.footer {
+  margin-top: 30vh;
+  background: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.804359)), color-stop(75%, rgba(255, 255, 255, 0.966824)), to(white));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.804359) 50%, rgba(255, 255, 255, 0.966824) 75%, white 100%);
+  background-size: cover;
+  background-position: bottom;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer .top {
+  padding-top: 25vh;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .top .footer-logo {
+  width: 192px;
+}
+
+.footer .top p {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.footer .top .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .top .socials a {
+  width: 40px;
+  height: 40px;
+  background-color: #000000;
+  border-radius: 50%;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-image: url(imgs/dribble.svg);
+  margin-left: 0.5rem;
+}
+
+.footer .top .socials a:nth-of-type(1) {
+  background-color: #ffffff;
+  background-image: url(imgs/dribble.svg);
+  background-size: 100%;
+}
+
+.footer .top .socials a:nth-of-type(2) {
+  background-image: url(imgs/linked.svg);
+  background-size: 80%;
+}
+
+.footer .top .socials a:nth-of-type(3) {
+  background-image: url(imgs/facebook.svg);
+  background-color: #ffffff;
+  background-size: 100%;
+}
+
+.footer .top .socials a:nth-of-type(4) {
+  background-image: url(imgs/instagram.svg);
+  background-color: #ffffff;
+  background-size: 100%;
+}
+
+.footer .bot {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10vh;
+  padding-bottom: 5vh;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
 @media (max-width: 1199px) {
   .abstract {
     opacity: 0.1;
   }
   .landing {
     overflow-y: hidden;
+  }
+  .project div {
+    width: 100%;
+  }
+  .project div button a img {
+    padding-bottom: 1px;
+  }
+  .footer .top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer .top .logo {
+    width: initial;
+  }
+  .footer .top > * {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .footer .bot {
+    margin-top: 0vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
   }
 }
 
@@ -304,6 +504,37 @@ main .description h1 span {
     width: 400px;
     height: 400px;
   }
+  .project h2 {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+  .project div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .project div button {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5vh;
+  }
+  .project div button a img {
+    padding-bottom: 0px;
+  }
+  .footer {
+    margin-top: 30vh;
+    padding-bottom: 10vh;
+  }
+  .footer .top .socials {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 @media (max-width: 575px) {
@@ -345,6 +576,10 @@ main .description h1 span {
     top: 5vh;
     right: -14rem;
     opacity: 0.1;
+  }
+  .info-wrapper .info-right {
+    right: -50px;
+    top: 50px;
   }
 }
 
