@@ -3,6 +3,9 @@ $color-main: #8312c7;
 $color-text: #000000;
 $color-white: #ffffff;
 
+html {
+    scroll-behavior: smooth;
+}
 ::selection {
     background-color: $color-main;
     color: $color-white;
@@ -318,8 +321,8 @@ main {
         margin-top: auto;
         align-items: center;
 
-        .footer-logo {
-            width: 192px;
+        .logo {
+            width: 200px;
         }
         p {
             text-transform: uppercase;
@@ -328,6 +331,7 @@ main {
        
         .socials {
             display: flex;
+            width: 200px;
             a {
                 width: 40px;
                 height: 40px;
@@ -338,22 +342,14 @@ main {
                 background-repeat: no-repeat; 
                 background-size: 60%;
                 background-image: url(imgs/dribble.svg);
-                margin-left: 0.5rem;
                 &:nth-of-type(1) {
-                    background-color: $color-white;
-                    background-image: url(imgs/dribble.svg);
-                    background-size: 100%;   
-                }         
-                &:nth-of-type(2) {
-                    background-image: url(imgs/linked.svg);
-                    background-size: 80%;   
-                }
-                &:nth-of-type(3) {
                     background-image: url(imgs/facebook.svg);
                     background-color: $color-white;
-                    background-size: 100%;   
+                    background-size: 100%;
+                    margin-left: auto;
+                    margin-right: 1rem;
                 }
-                &:nth-of-type(4) {
+                &:nth-of-type(2) {
                     background-image: url(imgs/instagram.svg);
                     background-color: $color-white;
                     background-size: 100%;   
@@ -428,6 +424,13 @@ main {
             & > * {
                 margin-top: 1rem;
                 margin-bottom: 1rem;
+            }
+            .socials {
+                a {
+                    &:nth-of-type(2) {
+                        margin-right: auto;
+                    }
+                }
             }
         }
         .bot {
@@ -523,11 +526,13 @@ main {
         }
     }
     .footer {
-        margin-top: -8rem;
         padding-bottom: 10vh;
-        .top .socials {
+        .top {
+            padding-top: 8rem;
+            .socials {
             width: 100%;
             justify-content: space-between;
+        }
         }
     }
 }

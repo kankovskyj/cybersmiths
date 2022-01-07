@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 ::-moz-selection {
   background-color: #8312c7;
   color: #ffffff;
@@ -351,8 +355,8 @@ main .description h1 span {
           align-items: center;
 }
 
-.footer .top .footer-logo {
-  width: 192px;
+.footer .top .logo {
+  width: 200px;
 }
 
 .footer .top p {
@@ -364,6 +368,7 @@ main .description h1 span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 200px;
 }
 
 .footer .top .socials a {
@@ -376,27 +381,17 @@ main .description h1 span {
   background-repeat: no-repeat;
   background-size: 60%;
   background-image: url(imgs/dribble.svg);
-  margin-left: 0.5rem;
 }
 
 .footer .top .socials a:nth-of-type(1) {
-  background-color: #ffffff;
-  background-image: url(imgs/dribble.svg);
-  background-size: 100%;
-}
-
-.footer .top .socials a:nth-of-type(2) {
-  background-image: url(imgs/linked.svg);
-  background-size: 80%;
-}
-
-.footer .top .socials a:nth-of-type(3) {
   background-image: url(imgs/facebook.svg);
   background-color: #ffffff;
   background-size: 100%;
+  margin-left: auto;
+  margin-right: 1rem;
 }
 
-.footer .top .socials a:nth-of-type(4) {
+.footer .top .socials a:nth-of-type(2) {
   background-image: url(imgs/instagram.svg);
   background-color: #ffffff;
   background-size: 100%;
@@ -445,6 +440,9 @@ main .description h1 span {
   .footer .top > * {
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+  .footer .top .socials a:nth-of-type(2) {
+    margin-right: auto;
   }
   .footer .bot {
     margin-top: 0;
@@ -529,8 +527,10 @@ main .description h1 span {
     padding-bottom: 0px;
   }
   .footer {
-    margin-top: -8rem;
     padding-bottom: 10vh;
+  }
+  .footer .top {
+    padding-top: 8rem;
   }
   .footer .top .socials {
     width: 100%;
